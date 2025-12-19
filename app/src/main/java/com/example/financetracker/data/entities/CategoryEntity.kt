@@ -2,8 +2,7 @@ package com.example.financetracker.data.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.financetracker.data.model.CategoryType
-import kotlin.time.Clock
+import java.util.UUID
 
 @Entity(
     tableName = "categories",
@@ -12,6 +11,7 @@ import kotlin.time.Clock
 data class CategoryEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0L,
+    val userId: String = UUID.randomUUID().toString(),
     val name: String,
     val type: TransactionType,
     val createdAt: Long = System.currentTimeMillis()
