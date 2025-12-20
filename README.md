@@ -29,6 +29,14 @@ The project demonstrates modern Android development practices including Compose 
 
 ---
 
+## ▶️ Demo Video
+
+Check out a demo of the Finance Tracker app in action:
+
+[Watch the demo on YouTube]([https://youtu.be/YD8xizpnjWM])
+
+---
+
 ## 🧭 Screens Implemented (6–8 Screens)
 
 ### 1. Login Screen
@@ -36,7 +44,7 @@ The project demonstrates modern Android development practices including Compose 
 - Input validation and error messages
 
 📸 Screenshot:  
-`/screenshots/login.png`
+<img src="app/screenshots/login.png" width="600" />
 
 ---
 
@@ -45,7 +53,7 @@ The project demonstrates modern Android development practices including Compose 
 - Password validation and loading state
 
 📸 Screenshot:  
-`/screenshots/signup.png`
+<img src="app/screenshots/signup.png" width="600" />
 
 ---
 
@@ -54,7 +62,7 @@ The project demonstrates modern Android development practices including Compose 
 - Quick access to add a new transaction
 
 📸 Screenshot:  
-`/screenshots/home.png`
+<img src="app/screenshots/home.png" width="600" />
 
 ---
 
@@ -63,7 +71,7 @@ The project demonstrates modern Android development practices including Compose 
 - Empty state when no transactions exist
 
 📸 Screenshot:  
-`/screenshots/transaction_list.png`
+<img src="app/screenshots/transaction_list.png" width="600" />
 
 ---
 
@@ -72,7 +80,7 @@ The project demonstrates modern Android development practices including Compose 
 - Real-time validation and loading indicator
 
 📸 Screenshot:  
-`/screenshots/add_transaction.png`
+<img src="app/screenshots/add_transaction.png" width="600" />
 
 ---
 
@@ -81,7 +89,7 @@ The project demonstrates modern Android development practices including Compose 
 - Confirmation dialog for delete action
 
 📸 Screenshot:  
-`/screenshots/edit_transaction.png`
+<img src="app/screenshots/edit_transaction.png" width="600" />
 
 ---
 
@@ -89,7 +97,7 @@ The project demonstrates modern Android development practices including Compose 
 - Displays detailed information for a single transaction
 
 📸 Screenshot:  
-`/screenshots/transaction_detail.png`
+<img src="app/screenshots/transaction_list.png" width="600" />
 
 ---
 
@@ -98,7 +106,7 @@ The project demonstrates modern Android development practices including Compose 
 - Logout functionality
 
 📸 Screenshot:  
-`/screenshots/profile.png`
+<img src="app/screenshots/profile.png" width="600" />
 
 ---
 
@@ -108,7 +116,9 @@ The project demonstrates modern Android development practices including Compose 
 - Empty state with helpful messaging when no categories exist
 
 📸 Screenshot:  
-`/screenshots/manage_categories.png`
+<img src="app/screenshots/manageCategories.png" width="600" />
+
+
 
 ---
 
