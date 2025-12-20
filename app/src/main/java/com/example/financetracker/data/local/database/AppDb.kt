@@ -13,7 +13,7 @@ import com.example.financetracker.data.local.database.RoomConverters
 
 @Database(
     entities = [TransactionEntity::class, CategoryEntity::class],
-    version = 1,
+    version = 2,
     exportSchema = false
 )
 @TypeConverters(RoomConverters::class)

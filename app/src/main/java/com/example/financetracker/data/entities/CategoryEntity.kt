@@ -11,8 +11,9 @@ import java.util.UUID
 data class CategoryEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0L,
-    val userId: String = UUID.randomUUID().toString(),
+    val userId: String,
     val name: String,
     val type: TransactionType,
+    val color: String,
     val createdAt: Long = System.currentTimeMillis()
 )

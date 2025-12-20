@@ -23,12 +23,12 @@ import java.util.UUID
 data class TransactionEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0L,
-    val userId: String = UUID.randomUUID().toString(),
+    val userId: String,
     val amount: Double,
     val type: TransactionType,
     val date: Long,
     val categoryId: Long,
-    val notes: String?,
+    val notes: String = "",
     val createdAt: Long = System.currentTimeMillis()
     )
 enum class TransactionType {

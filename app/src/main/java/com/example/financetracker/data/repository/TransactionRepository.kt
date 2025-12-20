@@ -38,7 +38,7 @@ class TransactionRepository(
         return transactionDao.getTransactionsByDateRange(userId, startDate, endDate)
     }
 
-    fun getRecentTransactions(userId: String, limit: Int = 10): Flow<List<Transaction>> {
+    fun getRecentTransactions(userId: String, limit: Int = 10): Flow<List<TransactionEntity>> {
         return transactionDao.getRecentTransactions(userId, limit)
     }
 
