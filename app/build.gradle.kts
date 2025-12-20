@@ -53,7 +53,6 @@ dependencies {
     implementation(libs.androidx.compose.ui.graphics)
     implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.androidx.compose.material3)
-    implementation(libs.androidx.adapters)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -63,14 +62,8 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     // Import the Firebase BoM
 
-    implementation(platform("com.google.firebase:firebase-bom:34.7.0"))
-
-
-    // TODO: Add the dependencies for Firebase products you want to use
-
-    // When using the BoM, don't specify versions in Firebase dependencies
-
-    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth-ktx:23.1.0")
+    implementation("com.google.firebase:firebase-analytics-ktx:22.1.2")
 
 
     // Add the dependencies for any other desired Firebase products
@@ -78,7 +71,8 @@ dependencies {
     // https://firebase.google.com/docs/android/setup#available-libraries
 
     val room_version = "2.8.4"
-
+    implementation("androidx.room:room-ktx:${room_version}")
+// Add this for Coroutines support
     implementation("androidx.room:room-runtime:$room_version")
 
     // If this project uses any Kotlin source, use Kotlin Symbol Processing (KSP)

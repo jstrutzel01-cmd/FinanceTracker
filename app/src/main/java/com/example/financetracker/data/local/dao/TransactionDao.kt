@@ -18,6 +18,9 @@ interface TransactionDao {
     @Query("SELECT * FROM transactions WHERE id = :transactionId")
     suspend fun getTransactionById(transactionId: String): TransactionEntity?
 
+    @Query("SELECT * FROM transactions WHERE id = :transactionId")
+    fun getTransactionByIdFlow(transactionId: String): Flow<TransactionEntity?>
+
     @Query("SELECT * FROM transactions WHERE userId = :userId AND categoryId = :categoryId ORDER BY date DESC")
     fun getTransactionsByCategory(userId: String, categoryId: String): Flow<List<TransactionEntity>>
 
@@ -38,6 +41,9 @@ interface TransactionDao {
 
     @Delete
     suspend fun deleteTransaction(transaction: TransactionEntity)
+
+    @Query("DELETE FROM transactions WHERE id = :transactionId")
+    suspend fun deleteTransactionById(transactionId: String)
 
     @Query("UPDATE transactions SET categoryId = :newCategoryId WHERE categoryId = :oldCategoryId")
     suspend fun updateTransactionsCategory(oldCategoryId: String, newCategoryId: String)

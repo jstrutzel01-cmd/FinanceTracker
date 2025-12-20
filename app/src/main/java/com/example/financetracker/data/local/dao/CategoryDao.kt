@@ -19,6 +19,9 @@ interface CategoryDao {
     fun getCategoriesByType(userId: String, type: TransactionType) : Flow<List<CategoryEntity>>
 
     @Query("SELECT * FROM categories WHERE id = :categoryId")
+    suspend fun getCategoryById(categoryId: String): CategoryEntity?
+
+    @Query("SELECT * FROM categories WHERE id = :categoryId")
     fun getCategoryByIdFlow(categoryId: String): Flow<CategoryEntity?>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
@@ -29,6 +32,12 @@ interface CategoryDao {
 
     @Delete
     suspend fun deleteCategory(category: CategoryEntity)
+
+    @Query("DELETE FROM categories WHERE id = :categoryId")
+    suspend fun deleteCategoryById(categoryId: String)
+
+    @Query("SELECT COUNT(*) FROM transactions WHERE categoryId = :categoryId")
+    suspend fun getTransactionCount(categoryId: String): Int
 
 
 }
