@@ -33,7 +33,7 @@ The project demonstrates modern Android development practices including Compose 
 
 Check out a demo of the Finance Tracker app in action:
 
-[Watch the demo on YouTube]([https://youtu.be/YD8xizpnjWM])
+[Watch the demo on YouTube](https://youtu.be/YD8xizpnjWM)
 
 ---
 
