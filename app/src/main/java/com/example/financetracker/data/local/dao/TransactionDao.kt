@@ -5,7 +5,6 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import androidx.room.Transaction
 import androidx.room.Update
 import com.example.financetracker.data.entities.TransactionEntity
 import com.example.financetracker.data.entities.TransactionType
@@ -29,22 +28,22 @@ interface TransactionDao {
     fun getTransactionsByDateRange(userId: String, startDate: Long, endDate: Long) : Flow<List<TransactionEntity>>
 
     @Query("SELECT * FROM transactions WHERE userId = :userId ORDER By date DESC LIMIT :limit")
-    fun getRecentTransactions(userId: String, limit: Int)
+    fun getRecentTransactions(userId: String, limit: Int) : Flow<List<TransactionEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertTransaction(transaction: Transaction)
+    fun insertTransaction(transaction: TransactionEntity)
 
     @Update
-    fun updateTransaction(transaction: Transaction)
+    fun updateTransaction(transaction: TransactionEntity)
 
     @Delete
-    suspend fun deleteTransaction(transaction: Transaction)
+    suspend fun deleteTransaction(transaction: TransactionEntity)
 
     @Query("UPDATE transactions SET categoryId = :newCategoryId WHERE categoryId = :oldCategoryId")
     suspend fun updateTransactionsCategory(oldCategoryId: String, newCategoryId: String)
 
     @Query("SELECT SUM(amount) FROM transactions WHERE userId = :userId AND type = :type")
-    fun getTotalByType(userId: String)
+    fun getTotalByType(userId: String, type: TransactionType) : Flow<Double?>
 
     @Query("""
         SELECT categoryId, SUM(amount) as total 
@@ -53,6 +52,11 @@ interface TransactionDao {
         GROUP BY categoryId
         ORDER BY total DESC
     """)
-    fun getSpendingByCategory(userId: String): Flow<Map<String, Double>>
+    fun getSpendingByCategory(userId: String): Flow<List<CategorySpending>>
 }
+
+data class CategorySpending(
+    val categoryId: String,
+    val total: Double
+)
 
